@@ -1,0 +1,5 @@
+resteasy-sample/bin/*
+resteasy-sample/target/*
+.classpath
+.project
+.settings
