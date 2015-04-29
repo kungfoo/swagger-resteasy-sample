@@ -16,4 +16,8 @@
 			com.wordnik.swagger.jaxrs.listing.SwaggerSerializers
 		</param-value>
 	</context-param>
+	
+	<listener>
+		<listener-class>ch.ergon.sample.rest.ServerStartup</listener-class>
+	</listener>
 </web-app>

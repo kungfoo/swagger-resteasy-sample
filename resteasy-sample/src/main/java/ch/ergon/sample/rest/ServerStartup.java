@@ -7,7 +7,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener
 public class ServerStartup implements ServletContextListener {
 
 	private static Logger LOGGER = Logger.getLogger(ServerStartup.class.getSimpleName());
