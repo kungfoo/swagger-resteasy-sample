@@ -1,5 +1,8 @@
 package ch.ergon.sample.rest.model;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkState;
+
 public class Pet {
 
 	public enum Kind {
@@ -9,7 +12,14 @@ public class Pet {
 	private String name;
 	private Kind kind;
 	private int ageInYears;
-
+	
+	public Pet(String name, Kind kind, int ageInYears) {
+		this.name = checkNotNull(name, "Pet name cannot be null.");
+		this.kind = checkNotNull(kind, "Kind cannot be null.");
+		checkState(ageInYears >= 0, "age in years cannot be negative.");
+		this.ageInYears = ageInYears;
+	}
+	
 	public String getName() {
 		return name;
 	}

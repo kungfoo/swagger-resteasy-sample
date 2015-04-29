@@ -46,12 +46,11 @@ public class PetResource {
 	}
 
 	private List<Pet> createPets() {
-		Pet fido = new Pet();
-		fido.setName("Fido");
-		fido.setKind(Kind.DOG);
-		fido.setAgeInYears(5);
-		
-		return newArrayList(fido );
+		return newArrayList(
+				new Pet("Fido", Kind.DOG, 5),
+				new Pet("Max", Kind.CAT, 3),
+				new Pet("Max 2.0", Kind.CAT, 0),
+				new Pet("Brookelyn the Gerbil", Kind.UNKNOWN, 2));
 	}
 
 	private ArrayList<Notification> createNotifications() {
