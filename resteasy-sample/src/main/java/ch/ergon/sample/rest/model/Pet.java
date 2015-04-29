@@ -6,8 +6,6 @@ import static com.google.common.base.Preconditions.checkState;
 import java.util.EnumSet;
 import java.util.Set;
 
-import javax.faces.component.UpdateModelException;
-
 import com.google.common.collect.ImmutableSet;
 
 
