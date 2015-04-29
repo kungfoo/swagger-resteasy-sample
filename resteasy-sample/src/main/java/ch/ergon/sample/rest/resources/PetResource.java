@@ -23,6 +23,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -40,6 +41,7 @@ public class PetResource {
 
 	@GET
 	@Path("/")
+	@ApiOperation(value = "Get a list of pets matching a query.")
 	public PetListResult query(@BeanParam PetQuery query) {
 		Predicate<Pet> predicate = query.toPredicate();
 		LOGGER.info(String.format("Filtering with %s", predicate));
