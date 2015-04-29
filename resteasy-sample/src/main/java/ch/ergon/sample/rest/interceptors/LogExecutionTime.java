@@ -11,12 +11,11 @@ import java.lang.annotation.Target;
 import javax.interceptor.InterceptorBinding;
 
 /**
- * Annotation to use in CDI beans where this interceptor
- * should be applied.
+ * Annotation to use in CDI beans where this interceptor should be applied.
  */
 @Inherited
 @InterceptorBinding
 @Retention(RUNTIME)
-@Target({METHOD, TYPE})
+@Target({ METHOD, TYPE })
 public @interface LogExecutionTime {
 }

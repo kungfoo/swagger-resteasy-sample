@@ -21,6 +21,5 @@ public class PetListResult {
 	public void setNotifications(List<Notification> notifications) {
 		this.notifications = notifications;
 	}
-	
-	
+
 }

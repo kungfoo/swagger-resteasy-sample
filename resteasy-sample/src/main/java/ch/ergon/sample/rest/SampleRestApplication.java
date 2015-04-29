@@ -25,7 +25,7 @@ public class SampleRestApplication extends Application {
 	public static Set<String> RESOURCE_PACKAGES = FluentIterable.from(RESOURCES)
 			.transform(packageName())
 			.toSet();
-	
+
 	@Override
 	public Set<Class<?>> getClasses() {
 		return RESOURCES;

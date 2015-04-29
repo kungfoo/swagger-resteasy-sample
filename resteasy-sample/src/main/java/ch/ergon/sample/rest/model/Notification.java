@@ -1,9 +1,8 @@
 package ch.ergon.sample.rest.model;
 
-
 public class Notification {
 	private String code;
-	
+
 	private String tranlatedMessage;
 
 	public String getCode() {
@@ -21,6 +20,5 @@ public class Notification {
 	public void setTranlatedMessage(String tranlatedMessage) {
 		this.tranlatedMessage = tranlatedMessage;
 	}
-	
-	
+
 }
