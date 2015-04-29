@@ -3,7 +3,7 @@
       http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
 
 	<interceptors>
-		<class>ch.ergon.sample.rest.TimeLoggingInterceptor</class>
+		<class>ch.ergon.sample.rest.interceptors.TimeLoggingInterceptor</class>
 	</interceptors>
 
 </beans>

@@ -1,4 +1,4 @@
-package ch.ergon.sample.rest;
+package ch.ergon.sample.rest.interceptors;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
@@ -6,8 +6,6 @@ import java.util.logging.Logger;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
-
-import ch.ergon.sample.rest.resources.LogExecutionTime;
 
 import com.google.common.base.Stopwatch;
 

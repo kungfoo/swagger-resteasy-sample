@@ -1,8 +1,8 @@
-package ch.ergon.sample.rest.resources;
+package ch.ergon.sample.rest.model;
 
 public class Pet {
 
-	enum Kind {
+	public enum Kind {
 		DOG, CAT, UNKNOWN
 	}
 

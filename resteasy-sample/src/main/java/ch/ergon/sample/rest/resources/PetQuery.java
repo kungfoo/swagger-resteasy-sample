@@ -4,7 +4,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import javax.ws.rs.QueryParam;
 
-import ch.ergon.sample.rest.resources.Pet.Kind;
+import ch.ergon.sample.rest.model.Pet;
+import ch.ergon.sample.rest.model.Pet.Kind;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Predicate;

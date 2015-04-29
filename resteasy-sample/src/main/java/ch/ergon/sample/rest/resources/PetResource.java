@@ -12,7 +12,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import ch.ergon.sample.rest.resources.Pet.Kind;
+import ch.ergon.sample.rest.interceptors.LogExecutionTime;
+import ch.ergon.sample.rest.model.Notification;
+import ch.ergon.sample.rest.model.Pet;
+import ch.ergon.sample.rest.model.PetListResult;
+import ch.ergon.sample.rest.model.Pet.Kind;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;

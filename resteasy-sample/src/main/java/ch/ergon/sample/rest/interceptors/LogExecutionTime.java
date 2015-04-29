@@ -1,4 +1,4 @@
-package ch.ergon.sample.rest.resources;
+package ch.ergon.sample.rest.interceptors;
 
 import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
