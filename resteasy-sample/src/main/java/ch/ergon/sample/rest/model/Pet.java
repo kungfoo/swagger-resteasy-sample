@@ -3,15 +3,31 @@ package ch.ergon.sample.rest.model;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
-public class Pet {
+import java.util.EnumSet;
+import java.util.Set;
 
-	public enum Kind {
-		DOG, CAT, UNKNOWN
+import javax.faces.component.UpdateModelException;
+
+import com.google.common.collect.ImmutableSet;
+
+
+public class Pet {
+	
+	public enum Action {
+		CREATE, UPDATE, DELETE, COPY;
 	}
 
-	private String name;
-	private Kind kind;
+	public enum Kind {
+		DOG, CAT, UNKNOWN;
+		
+		public static final EnumSet<Kind> KNOWN_KINDS = EnumSet.complementOf(EnumSet.of(UNKNOWN));
+	}
+
+	private final String name;
+	private final Kind kind;
 	private int ageInYears;
+	
+	private final Set<Action> actions = ImmutableSet.of(Action.UPDATE, Action.COPY, Action.DELETE);
 
 	public Pet(String name, Kind kind, int ageInYears) {
 		this.name = checkNotNull(name, "Pet name cannot be null.");
@@ -24,24 +40,17 @@ public class Pet {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Kind getKind() {
 		return kind;
 	}
 
-	public void setKind(Kind kind) {
-		this.kind = kind;
-	}
 
 	public int getAgeInYears() {
 		return ageInYears;
 	}
 
-	public void setAgeInYears(int ageInYears) {
-		this.ageInYears = ageInYears;
+	public Set<Action> getActions() {
+		return actions;
 	}
-
+	
 }
