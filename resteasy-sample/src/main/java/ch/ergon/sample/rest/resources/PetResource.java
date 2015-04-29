@@ -13,8 +13,8 @@ import javax.ws.rs.Produces;
 import ch.ergon.sample.rest.resources.Pet.Kind;
 
 @Path("/pets")
-@Consumes("application/json")
 @Produces("application/json")
+@Consumes("application/json")
 @LogExecutionTime
 public class PetResource {
 	

@@ -14,14 +14,15 @@
 			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
 		</repository>
 	</repositories>
-
-
 	<dependencies>
 
 		<dependency>
+			<!-- resteasy jboss modules cannot (I think) be loaded from any repo, so I added it to the vendor folder.
+			     It gets patched into jboss using the rakefile. -->
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.0.9.Final</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -35,14 +36,6 @@
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-
 
 	</dependencies>
 	<build>
@@ -63,6 +56,9 @@
 				<groupId>org.jboss.as.plugins</groupId>
 				<artifactId>jboss-as-maven-plugin</artifactId>
 				<version>7.7.Final</version>
+				<configuration>
+					<jbossHome>vendor/jboss_as/jboss-as-7.1.1.Final</jbossHome>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
