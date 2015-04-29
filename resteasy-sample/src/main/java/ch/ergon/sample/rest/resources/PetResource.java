@@ -11,34 +11,40 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import ch.ergon.sample.rest.interceptors.LogExecutionTime;
 import ch.ergon.sample.rest.model.Notification;
 import ch.ergon.sample.rest.model.Pet;
-import ch.ergon.sample.rest.model.PetListResult;
 import ch.ergon.sample.rest.model.Pet.Kind;
+import ch.ergon.sample.rest.model.PetListResult;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
+import com.wordnik.swagger.annotations.Api;
 
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 @Path("/pets")
-@Produces("application/json")
-@Consumes("application/json")
+@Api(
+		value = "/pets",
+		description = "Get some pets from a REST resoucce, eh?",
+		produces = MediaType.APPLICATION_JSON,
+		consumes = MediaType.APPLICATION_JSON)
 @LogExecutionTime
 public class PetResource {
-	
-	
+
 	private static Logger LOGGER = Logger.getLogger(PetResource.class.getSimpleName());
 	private List<Pet> pets = createPets();
-	
+
 	@GET
-    @Path("/")
+	@Path("/")
 	public PetListResult query(@BeanParam PetQuery query) {
 		Predicate<Pet> predicate = query.toPredicate();
 		LOGGER.info(String.format("Filtering with %s", predicate));
 		ImmutableList<Pet> petsMatchingQuery = FluentIterable.from(pets).filter(predicate).toList();
-		
+
 		PetListResult result = new PetListResult();
 		result.setNotifications(createNotifications());
 		result.setPets(petsMatchingQuery);

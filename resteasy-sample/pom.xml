@@ -17,13 +17,13 @@
 	<dependencies>
 
 		<dependency>
-			<!-- resteasy jboss modules cannot (I think) be loaded from any repo, so I added it to the vendor folder.
-			     It gets patched into jboss using the rakefile. -->
+			<!-- resteasy jboss modules cannot (I think) be loaded from any repo, so I added it to the vendor folder. It gets patched into jboss using the rakefile. -->
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.0.9.Final</version>
 			<scope>provided</scope>
 		</dependency>
+
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
@@ -36,6 +36,22 @@
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.wordnik</groupId>
+			<artifactId>swagger-jersey2-jaxrs</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>jersey-container-servlet-core</artifactId>
+					<groupId>org.glassfish.jersey.containers</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jersey-media-multipart</artifactId>
+					<groupId>org.glassfish.jersey.media</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
 
 	</dependencies>
 	<build>
@@ -62,4 +78,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.wordnik</groupId>
+				<artifactId>swagger-jersey2-jaxrs</artifactId>
+				<version>1.5.3-M1</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

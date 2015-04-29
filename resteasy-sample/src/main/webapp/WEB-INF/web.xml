@@ -13,7 +13,7 @@
 	<context-param>
 		<param-name>resteasy.providers</param-name>
 		<param-value>
-
+			com.wordnik.swagger.jaxrs.listing.SwaggerSerializers
 		</param-value>
 	</context-param>
 </web-app>
