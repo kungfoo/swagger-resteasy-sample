@@ -8,6 +8,10 @@ Then navigate to
 
     http://localhost:8080/resteasy-sample/rest/pets
 
+To see the swagger-ui, navigate to
+
+    http://localhost:8080/resteasy-sample/
+
 If you can't run the rakefile because you
 
 a) don't have rake
