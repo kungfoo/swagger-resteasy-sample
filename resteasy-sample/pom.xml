@@ -69,13 +69,11 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.7.Final</version>
-				<configuration>
-					<jbossHome>vendor/jboss_as/jboss-as-7.1.1.Final</jbossHome>
-				</configuration>
-			</plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.1.0.Alpha2</version>
+            </plugin>
+
 		</plugins>
 	</build>
 	<dependencyManagement>
